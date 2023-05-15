@@ -10,11 +10,10 @@ import org.junit.jupiter.params.provider.ValueSource;
 public class Exercises_Tests {
 	// write unit test(s) for myMethod here
     @ParameterizedTest
-    @ValueSource(ints = {20,30,40,50})
+    @CsvSource({"20,10","6,3","49,7"})
     @DisplayName("Given two numbers, compare and modulo check")
-    public void givenTwoNumbers_ReturnsTrueFalse(int num1)
+    public void givenTwoNumbers_ReturnsTrueFalse(int num1, int num2)
     {
-        int num2 = 10;
         var result = Exercises.myMethod(num1, num2);
         Assertions.assertTrue(result);
     }
